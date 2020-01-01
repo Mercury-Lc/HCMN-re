@@ -10,7 +10,9 @@
 
 	<!-- 数据库连接池 -->
 	<!-- 加载配置文件 -->
-	<context:property-placeholder location="classpath:properties/db.properties" />
+	<context:property-placeholder location="classpath:properties/db.properties" ignore-unresolvable="true"  />
+	
+	
 	<!-- 数据库连接池 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		destroy-method="close">
@@ -62,4 +64,5 @@
 
 	<!-- 配置包扫描器，扫描所有带@Service注解的类 -->
 	<context:component-scan base-package="ol.service" />
+	<import resource="classpath:spring/mongodbspring.xml"/>
 </beans>
