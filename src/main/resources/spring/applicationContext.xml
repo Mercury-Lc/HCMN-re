@@ -30,7 +30,7 @@
 	</bean>
 	<!-- 使用扫描包的形式来创建mapper代理对象 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="cn.itcast.mapper" />
+		<property name="basePackage" value="ol.mapper" />
 	</bean>
 
 	<!-- 事务管理器 -->
@@ -57,10 +57,9 @@
 	<!-- 切面 -->
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* cn.itcast.service..*.*(..))" />
+			pointcut="execution(* ol.service..*.*(..))" />
 	</aop:config>
 
 	<!-- 配置包扫描器，扫描所有带@Service注解的类 -->
-	<context:component-scan base-package="cn.itcast.service" />
-
+	<context:component-scan base-package="ol.service" />
 </beans>
